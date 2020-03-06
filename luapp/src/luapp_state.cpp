@@ -41,7 +41,7 @@ state::state()
     pErrorFunction_ = &l_treat_error;
     pPrintFunction_ = &default_print_function;
 
-    pLua_ = lua_open();
+    pLua_ = luaL_newstate();
     if (!pLua_)
         throw lua::exception("state", "Error while initializing Lua.");
 

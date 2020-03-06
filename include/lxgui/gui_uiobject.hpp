@@ -626,7 +626,7 @@ namespace gui
 
         static const char className[];
         static const char* classList[];
-        static Lunar<lua_virtual_glue>::RegType methods[];
+        static lua::glue_list<lua_virtual_glue> methods[];
 
     protected :
 
@@ -678,7 +678,7 @@ namespace gui
 
         static const char className[];
         static const char* classList[];
-        static Lunar<lua_uiobject>::RegType methods[];
+        static lua::glue_list<lua_uiobject> methods[];
 
     protected :
 

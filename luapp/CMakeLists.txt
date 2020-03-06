@@ -12,7 +12,7 @@ add_library(lxgui-luapp STATIC
     ${SRCROOT}/luapp_var.cpp
 )
 
-file(GLOB files ${PROJECT_SOURCE_DIR}/include/lxgui/lu*.hpp)
+file(GLOB files ${PROJECT_SOURCE_DIR}/include/lxgui/luapp*.hpp)
 install(FILES ${files} DESTINATION include/lxgui)
 install(TARGETS lxgui-luapp ARCHIVE DESTINATION lib)
 

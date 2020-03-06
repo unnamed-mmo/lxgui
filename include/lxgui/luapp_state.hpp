@@ -1,8 +1,14 @@
 #ifndef LUAPP_STATE_HPP
 #define LUAPP_STATE_HPP
 
-#include "lxgui/lunar.hpp"
 #include <lxgui/utils.hpp>
+
+extern "C" {
+#include <lua.h>
+#include <lauxlib.h>
+#include <lualib.h>
+}
+
 #include <vector>
 #include <map>
 
@@ -24,8 +30,18 @@ enum type
     TYPE_USERDATA
 };
 
-typedef int (*c_function) (lua_State *L);
-typedef void (*print_function) (const std::string& s);
+using c_function = int (*) (lua_State *L);
+using print_function = void (*) (const std::string& s);
+template<typename T>
+using c_mem_function = int (T::*) (lua_State *L);
+template<typename T>
+struct glue_list { const char *name; lua::c_mem_function<T> mfunc; };
+
+template<typename T>
+int call_member_function(lua_State* L)
+{
+
+}
 
 /// Lua wrapper
 /** Wraps the Lua api into a single class.
@@ -101,7 +117,19 @@ public :
     template<class T>
     void reg()
     {
-        Lunar<T>::reg(pLua_);
+        // Create class table
+        const std::string& sClassName = "__" + std::string(T::className);
+        lua_newtable(L);
+        int iClassTable = get_top();
+        push_value(-1);
+        set_global(sClassName);
+
+
+        // Create metatable
+        luaL_newmetatable(L, sClassName.c_str());
+        int iMetaTable = get_top();
+
+        set_field()
     }
 
     /// Prints an error string in the log file with the Lua tag.
@@ -214,7 +242,7 @@ public :
     template<class T>
     T* push_new()
     {
-        return Lunar<T>::push_new(pLua_);
+        return T::push_new(pLua_);
     }
 
     /// Sets the value of a global Lua variable.
@@ -277,7 +305,7 @@ public :
     template<class T>
     T* get(int iIndex = -1) const
     {
-        return Lunar<T>::wide_check(pLua_, iIndex);
+        return T::lua_get(pLua_, iIndex);
     }
 
     /// Returns the number of value on the stack.
