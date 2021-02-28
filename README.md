@@ -2,7 +2,7 @@
 
 # Getting started 
 ```
-sudo dnf install freetype-devel SFML-devel lua-bit32 mesa-libGLU-devel
+sudo dnf install -y freetype-devel SFML-devel lua-bit32 mesa-libGLU-devel
 git submodule update --init
 ```                                                                       
 ## install GLEW                                                                                                    
