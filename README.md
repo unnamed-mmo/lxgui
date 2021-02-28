@@ -2,12 +2,9 @@
 
 # Getting started 
 ```
-sudo dnf install freetype-devel
-sudo dnf install SFML-devel                                                                                     
-sudo dnf install lua-bit32                                                                                      
-sudo dnf install mesa-libGLU-devel                                                                              
-git submodule update --init                                                                                     
-```                                                                                                             
+sudo dnf install freetype-devel SFML-devel lua-bit32 mesa-libGLU-devel
+git submodule update --init
+```                                                                       
 ## install GLEW                                                                                                    
 download tar of the [![latest release](https://github.com/nigels-com/glew/releases/)](https://github.com/nigels-com/glew/releases/)                                                                                 
 ```
@@ -197,7 +194,8 @@ Now that the GUI structure is in place, we still need to display the number of f
                 self.frames = 0;
             </OnLoad>
             <OnUpdate>
-                -- This is Lua code !
+                -- This is Lua code !sudo dnf install freetype-devel SFML-devel lua-bit32 mesa-libGLU-devel
+git submodule update --init
                 self.timer = self.timer + arg1;
                 self.frames = self.frames + 1;
 
