@@ -124,7 +124,6 @@ vcpkg install sdl2 sdl2-ttf sdl2-image
 ```
 sudo dnf install -y freetype-devel SFML-devel mesa-libGLU-devel
 ```
-# Quickstart 
 
 - apt based distros (Debian, Ubuntu):
 ```
@@ -137,6 +136,7 @@ brew install sfml zlib libpng freetype glew
 ```
 
 - Windows:
+```
 ```
 
 
@@ -176,6 +176,7 @@ cd build
 emcmake cmake ../
 emmake make
 ```
+
 
 # How do I use it? A tutorial.
 
