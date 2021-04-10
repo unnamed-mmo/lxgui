@@ -6,11 +6,12 @@ var indexSectionsWithContent =
   3: "gilux",
   4: "abcdefghiklmnopqrstuvwz~",
   5: "abcdefghiklmnoprstuvwxyz",
-  6: "bcdfhilmpqrstuv",
+  6: "bcdefhilmpqrsuv",
   7: "abcfklmostvw",
-  8: "abcdfhklmnoprstuvxy",
+  8: "abcdfhklmnopqrstuvxy",
   9: "bdf",
-  10: "dlm"
+  10: "dlms",
+  11: "l"
 };
 
 var indexSectionNames =
@@ -25,7 +26,8 @@ var indexSectionNames =
   7: "enums",
   8: "enumvalues",
   9: "related",
-  10: "defines"
+  10: "defines",
+  11: "pages"
 };
 
 var indexSectionLabels =
@@ -40,6 +42,7 @@ var indexSectionLabels =
   7: "Enumerations",
   8: "Enumerator",
   9: "Friends",
-  10: "Macros"
+  10: "Macros",
+  11: "Pages"
 };
 
